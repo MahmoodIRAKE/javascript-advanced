@@ -8,6 +8,9 @@
 </head>
 <body>
     <script>
+        const alex={
+            name:"alex",
+        }
     const mahmood={
         name:'mahmood',
         print: function(){
@@ -15,16 +18,13 @@
            
         },
         printAgain: function(){
-            setTimeout(this.print.bind(this), 5000);
-            setTimeout(() => {
-                console.log("asdf")
-            }, 5000);
+            setTimeout(this.print.bind(alex), 3000);
         }
     }
-
-    mahmood.printAgain.apply(mahmood,mahmood.printAgain);
-    mahmood.printAgain.bind(mahmood)();
-    mahmood.printAgain.call(mahmood,mahmood.printAgain);
+    mahmood.printAgain();
+    //mahmood.printAgain.apply(mahmood,mahmood.printAgain);
+    //mahmood.printAgain.bind(mahmood)();
+    //mahmood.printAgain.call(mahmood,mahmood.printAgain);
 </script>
 </body>
 </html>
