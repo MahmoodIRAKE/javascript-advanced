@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27-2</title>
+  </head>
+  <body>
+    <script>
+      const makeAllCaps = (array) => {
+        return new Promise((resolve, reject) => {
+          resolve(
+            array.map((word) => {
+              if (typeof word !== "string") return reject(word);
+              else return word.toUpperCase();
+            })
+          );
+        });
+      };
+
+      const sortWords = (array) => {
+        return new Promise(function (resolve, reject) {
+          resolve(array.sort());
+        });
+      };
+
+      makeAllCaps(["word1", "aord2", "a"])
+        .then((res) => {
+           console.log(res)
+           sortWords(res).then((res) => console.log(res));
+        }).catch((word) => console.log(`the word ${word} is not a string`));
+    </script>
+  </body>
+</html>

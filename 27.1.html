@@ -11,13 +11,13 @@
         function  isGreater(num){
             new Promise((resolve,reject)=>{
              if(num>10){
-                 return resolve();
+                 return resolve(num);
              }  
              else{
-                 return reject();
+                 return reject("is less than 10");
              }
-        }).then(()=>console.log('this is resolved'))
-        .catch(()=>console.log("this is not resolved"));
+        }).then((value)=>console.log('this is resolved',value))
+        .catch((error)=>console.log(error));
         }
         isGreater(11)
         isGreater(9)

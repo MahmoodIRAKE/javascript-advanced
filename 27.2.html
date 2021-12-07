@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function stringContainsNumber(_string) {
+            return !(/\d/.test(_string));
+        }
+    
+        const makeAllCaps=(arr)=> {
+            
+             return  new Promise((resolve, reject) => {
+                for (let i = 0; i<arr.length; i++) {
+                   if(stringContainsNumber(arr[i])){
+                     arr[i]=arr[i].toUpperCase();  
+                   }
+                   
+                   else{
+                        return  reject("This is not Only Arr");
+                   }
+                }
+                console.log(arr);
+              return resolve(arr);
+            })
+        }
+        function sortWords(arr) {
+           return  new Promise((resolve, reject) => {
+               arr.sort((a,b)=>a-b);
+                for (let i = 0; i<arr.length; i++) {
+                   if(!stringContainsNumber(arr[i])){
+                    return reject("This is not Only Arr"); 
+                   }
+                }
+                return resolve(arr);
+            })
+        }
+
+        const arr1=['aa','cc','dd','bb']
+        const arr2=['a','c1','d']
+        makeAllCaps(arr1).then((value)=>console.log('sd')).catch((error)=>console.log(error))
+        makeAllCaps(arr2).then((value)=>console.log(value)).catch((error)=>console.log(error))
+        sortWords(arr1).then((value)=>console.log(value)).catch((error)=>console.log(error))
+        sortWords(arr2).then((value)=>console.log(value)).catch((error)=>console.log(error))
+    </script>
+</body>
+
+</html>
